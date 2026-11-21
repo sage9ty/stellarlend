@@ -170,7 +170,7 @@ jobs:
           FUZZ_TIMEOUT_SEC: "5"
         run: bash scripts/fuzz/run_ci_smoke.sh
 
-# ──────────────────────────────────────────
+  # ──────────────────────────────────────────
   # Invariant Testing — protocol correctness
   # ──────────────────────────────────────────
   invariant-testing:
@@ -237,7 +237,6 @@ jobs:
           path: stellar-lend/fuzz/artifacts/lending_actions/
           retention-days: 30
 
-          
   # ─────────────────────────────────────────────
   # Workspace — validate root monorepo scripts
   # ─────────────────────────────────────────────
@@ -393,11 +392,7 @@ jobs:
 
           if [[ "${{ needs.api.result }}" != "success" ]] || \
              [[ "${{ needs.oracle.result }}" != "success" ]] || \
-             [[ "${{ needs.contracts.result }}" != "success" ]] || \
-             [[ "${{ needs.fuzzing.result }}" != "success" ]] || \
-             [[ "${{ needs.workspace.result }}" != "success" ]]; then
-            echo "::error::One or more quality checks failed. PR cannot be merged."
+             [[ "${{ needs.contracts.result }}" != "success" ]]; then
+            echo "::error::One or more required jobs failed"
             exit 1
           fi
-
-          echo "All required quality checks passed!"

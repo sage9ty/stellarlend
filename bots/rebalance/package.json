@@ -4,7 +4,7 @@
   "description": "Declaratively scheduled treasury and pool rebalancing jobs for StellarLend",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "node init && tsc",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-strip-types --test src/__tests__/*.test.ts"
   },

@@ -22,7 +22,7 @@ jobs:
 
       - name: Install dependencies
         # The root lockfile is out of sync with the workspace manifests.
-        run: npm ci || npm install
+        run: npm install --no-audit --no-fund
 
       - name: Build project
         run: npm run build

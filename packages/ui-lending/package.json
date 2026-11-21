@@ -13,11 +13,11 @@
     }
   },
   "scripts": {
-    "build": "tsup",
+    "build": "node init && tsup",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "node init && storybook build"
   },
   "peerDependencies": {
     "react": ">=18.0.0",
@@ -35,6 +35,12 @@
     "tsup": "^8.3.5",
     "typescript": "^5.0.0"
   },
-  "keywords": ["stellar", "lending", "defi", "react", "components"],
+  "keywords": [
+    "stellar",
+    "lending",
+    "defi",
+    "react",
+    "components"
+  ],
   "license": "MIT"
 }

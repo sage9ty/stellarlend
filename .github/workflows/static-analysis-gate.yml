@@ -37,9 +37,8 @@ jobs:
           components: rustfmt
 
       - name: Check formatting
-        run: |
-          cd stellar-lend
-          cargo fmt --all -- --check
+        working-directory: stellar-lend
+        run: cargo fmt --all -- --check
         # Fail message shown to contributors on mismatch:
         # Run `cargo fmt --all` locally and commit the result.
 
@@ -71,9 +70,8 @@ jobs:
             ${{ runner.os }}-clippy-
 
       - name: Run clippy (deny all warnings)
-        run: |
-          cd stellar-lend
-          cargo clippy --all-targets --all-features -- -D warnings
+        working-directory: stellar-lend
+        run: cargo clippy --all-targets --all-features -- -D warnings
 
   # ──────────────────────────────────────────────────────────────────────────
   # Security audit — no known CVEs
@@ -97,9 +95,8 @@ jobs:
         run: cargo install cargo-audit --locked --version "^0.22"
 
       - name: Run cargo audit
-        run: |
-          cd stellar-lend
-          cargo audit --deny warnings
+        working-directory: stellar-lend
+        run: cargo audit --deny warnings
 
       - name: Upload audit report
         if: always()
