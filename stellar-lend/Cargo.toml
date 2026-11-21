@@ -69,6 +69,7 @@ members = [
   "contracts/security",
   "contracts/lib/calldata-encoding",
   "contracts/dca-module",
+  "scratch-tests",
 ]
 exclude = [
    "fuzz",

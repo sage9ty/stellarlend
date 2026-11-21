@@ -1,16 +1,23 @@
 {
   "name": "sllend",
   "version": "0.1.0",
-  "description": "StellarLend developer CLI — interact with lending contracts from the terminal",
-  "bin": { "sllend": "./dist/index.js" },
+  "description": "StellarLend developer CLI \u2014 interact with lending contracts from the terminal",
+  "bin": {
+    "sllend": "./dist/index.js"
+  },
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "dev": "ts-node src/index.ts",
+    "build": "node init && tsc",
+    "dev": "node init && ts-node src/index.ts",
     "lint": "eslint src --ext .ts",
     "typecheck": "tsc --noEmit"
   },
-  "keywords": ["stellar", "soroban", "defi", "cli"],
+  "keywords": [
+    "stellar",
+    "soroban",
+    "defi",
+    "cli"
+  ],
   "license": "MIT",
   "dependencies": {
     "@stellar/stellar-sdk": "^14.5.0",
@@ -26,5 +33,7 @@
     "typescript": "^5.3.3",
     "ts-node": "^10.9.2"
   },
-  "engines": { "node": ">=20" }
+  "engines": {
+    "node": ">=20"
+  }
 }

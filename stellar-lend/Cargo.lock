@@ -2719,6 +2719,14 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
 
 [[package]]
+name = "scratch-tests"
+version = "0.0.0"
+dependencies = [
+ "hello-world",
+ "soroban-sdk",
+]
+
+[[package]]
 name = "sec1"
 version = "0.7.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3560,7 +3568,7 @@ dependencies = [
 name = "stellarlend-storage-audit"
 version = "0.1.0"
 dependencies = [
- "soroban-sdk 27.0.6",
+ "soroban-sdk",
 ]
 
 [[package]]

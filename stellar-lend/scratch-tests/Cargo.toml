@@ -1,0 +1,17 @@
+[package]
+name = "scratch-tests"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+hello-world = { path = "../contracts/hello-world" }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+
+[lib]
+doctest = false
+
+[lints]
+workspace = true

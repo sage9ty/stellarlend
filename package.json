@@ -14,7 +14,7 @@
     "examples"
   ],
   "scripts": {
-    "build": "tsc --noEmit",
+    "build": "node init && tsc --noEmit",
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "devnet": "bash scripts/devnet/bootstrap.sh",
@@ -26,7 +26,7 @@
     "test:differential:report": "ts-node scripts/generate-differential-report.ts",
     "prettier": "prettier --write \"test/**/*.ts\"",
     "install:all": "npm install --workspaces",
-    "build:all": "npm run build -w stellarlend-api && npm run build -w stellarlend-oracle && npm run build -w @stellarlend/sdk && npm run build -w @stellarlend/ui-lending && npm run build -w @stellarlend/examples",
+    "build:all": "node init && npm run build -w stellarlend-api && npm run build -w stellarlend-oracle && npm run build -w @stellarlend/sdk && npm run build -w @stellarlend/ui-lending && npm run build -w @stellarlend/examples",
     "lint:all": "npm run lint -w stellarlend-api && npm run lint -w stellarlend-oracle",
     "test:all": "npm test && npm run test -w stellarlend-api && npm run test -w stellarlend-oracle && npm run test -w @stellarlend/ui-lending && npm run test -w @stellarlend/sdk && npm run test -w @stellarlend/examples && npm run test:devnet"
   },
